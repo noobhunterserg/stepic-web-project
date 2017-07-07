@@ -5,7 +5,7 @@ def application(env, start_response):
     # parsing_line=string[ind+1:]
     # spl = parsing_line.split('&')
     # body = '\n'.join(spl)
-    body = 2
+    body = '2'
     status = '200 OK'
     headers = [
         ('Content-Type', 'text/plain')
