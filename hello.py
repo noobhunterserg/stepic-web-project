@@ -10,4 +10,4 @@ def application(env, start_response):
     ]
     start_response(status, headers)
 
-    return body
+    return [bytes(body, 'utf-8')
