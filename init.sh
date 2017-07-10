@@ -1,4 +1,4 @@
-sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf
+sudo ln -sf /home/serg/web/etc/nginx.conf /etc/nginx/sites-enabled/test.conf
 sudo /etc/init.d/nginx restart
-sudo ln -sf /home/box/web/etc/gunicorn.conf /etc/gunicorn.d/test
-gunicorn -b 0.0.0.0:8080 hello:application 
+gunicorn -c /home/serg/web/etc/gunicorn.py hello:app
+gunicorn -c /home/serg/web/etc/gunicorn_django.py ask.wsgi:application

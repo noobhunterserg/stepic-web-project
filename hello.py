@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-def application(env, start_response):
+def app(env, start_response):
     body = [bytes(i + '\n', 'ascii') for i in env['QUERY_STRING'].split('&')]
     status = '200 OK'
     headers = [
