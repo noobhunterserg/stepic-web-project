@@ -7,7 +7,7 @@ class Question(models.Model):
     added_at = models.DateField()
     rating = models.IntegerField()
     author = models.ForeignKey(User, related_name = 'q_author')
-    likes = models.ManyToMany(User, related_name = 'q_likes')
+    likes = models.ManyToManyField(User, related_name = 'q_likes')
 
 class Answer(models.Model):
     text = models.TextField()
