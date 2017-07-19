@@ -88,3 +88,39 @@
 [2017-07-10 18:09:13 +0300] [6778] [INFO] Listening at: http://0.0.0.0:8000 (6778)
 [2017-07-10 18:09:13 +0300] [6778] [INFO] Using worker: sync
 [2017-07-10 18:09:13 +0300] [6781] [INFO] Booting worker with pid: 6781
+[2017-07-10 18:36:00 +0300] [4903] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [4906] [INFO] Worker exiting (pid: 4906)
+[2017-07-10 18:36:00 +0300] [5167] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [5170] [INFO] Worker exiting (pid: 5170)
+[2017-07-10 18:36:00 +0300] [5305] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [5308] [INFO] Worker exiting (pid: 5308)
+[2017-07-10 18:36:00 +0300] [5453] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [5456] [INFO] Worker exiting (pid: 5456)
+[2017-07-10 18:36:00 +0300] [5539] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [5542] [INFO] Worker exiting (pid: 5542)
+[2017-07-10 15:36:00 +0000] [5627] [INFO] Worker exiting (pid: 5627)
+[2017-07-10 18:36:00 +0300] [5624] [INFO] Handling signal: term
+[2017-07-10 18:36:00 +0300] [5753] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [5756] [INFO] Worker exiting (pid: 5756)
+[2017-07-10 18:36:00 +0300] [5882] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [5885] [INFO] Worker exiting (pid: 5885)
+[2017-07-10 18:36:00 +0300] [5968] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [5971] [INFO] Worker exiting (pid: 5971)
+[2017-07-10 18:36:00 +0300] [6096] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [6099] [INFO] Worker exiting (pid: 6099)
+[2017-07-10 18:36:00 +0300] [6178] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [6181] [INFO] Worker exiting (pid: 6181)
+[2017-07-10 18:36:00 +0300] [6778] [INFO] Handling signal: term
+[2017-07-10 15:36:00 +0000] [6781] [INFO] Worker exiting (pid: 6781)
+[2017-07-10 18:36:00 +0300] [5539] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [5624] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [5753] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [5882] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [6178] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [5453] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [4903] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [5167] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [5968] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [6778] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [6096] [INFO] Shutting down: Master
+[2017-07-10 18:36:00 +0300] [5305] [INFO] Shutting down: Master
