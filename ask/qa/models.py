@@ -6,11 +6,11 @@ class Question(models.Model):
     text = models.TextField()
     added_at = models.DateField()
     rating = models.IntegerField()
-    author = models.ForeignKey(User, on_delete = models.SET_NULL)
+    author = models.ForeignKey(User, related_name = 'q_author')
     likes = models.ManyToMany(User, related_name = 'q_likes')
 
 class Answer(models.Model):
     text = models.TextField()
     added_at = models.DateField()
-    question = models.ForeignKey(User, on_delete = models.SET_NULL)
-    author = models.ForeignKey(User, on_delete = models.SET_NULL)
+    question = models.ForeignKey(Question)
+    author = models.ForeignKey(User, related_name ='a_author')
