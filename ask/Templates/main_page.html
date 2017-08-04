@@ -1,12 +1,24 @@
 {% extends 'index.html' %}
 
 
-{% block tags %}
-<div>
-  <ul>
-    <li>tag1</li>
-    <li>tag2</li>
-    <li>tag3</li>
-  </ul>
-</div>
+{% block context %}
+  <table>
+    TABLE
+    <tr>
+      <th>Question</th>
+      <th>Author</th>
+      <th>Added at</th>
+      <th>Rating</th>
+   </tr>
+    {% for question in questions %}
+        <tr>
+          <td>{{ question.title }}</td>
+          <td>{{ question.author.username }}</td>
+          <td>{{ question.added_at }}</td>
+          <td>{{ question.rating }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+    {% include "pagination.html" %}
+
 {% endblock %}

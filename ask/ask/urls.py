@@ -18,18 +18,16 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
-from qa.views import notfound, test, questions, main
+from qa.views import notfound, test, new, popular, question
 
 urlpatterns = [
-    url(r'^$', main),
-    url(r'^login/', questions),
+    url(r'^$', new, name='new'),
+    url(r'^login/', test),
     url(r'^signup/', test),
-    url(r'^qustion/123/', test),
+    url(r'^question/(?P<num>[0-9]+)/$', question),
     url(r'^ask/', test),
-    url(r'^popular/', test),
-    url(r'^new/', test),
+    url(r'^popular/', popular, name='popular'),
     url(r'^', notfound),
-    url(r'^static/', include(admin.site.urls)),
 ]
 
 # urlpatterns += staticfiles_urpatterns()

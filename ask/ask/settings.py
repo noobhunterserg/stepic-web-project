@@ -123,6 +123,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = ('/home/serg/web/static',
-)
+    )
 
 STATIC_ROOT = '/home/serg/web/ask/static'

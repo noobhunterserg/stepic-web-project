@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+
+{% block context %}
+  <p>{{ question.title }}</p>
+  <br>
+  <p>{{ question.text }}</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  {% for answer in answers %}
+    <p>{{ answer.text }}{{ answer.author.username }}</p>
+  {% endfor %}
+{% endblock %}
