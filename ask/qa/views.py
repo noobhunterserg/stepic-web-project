@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse, HttpResponseNotFound
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 from qa.models import Question, Answer
+from qa.forms import Add_Form
 
 def test(request, *args, **kwargs):
     return HttpResponse('OK')
@@ -32,8 +34,7 @@ def paginate(request, qs):
     return page, paginator
 
 def new(request):
-    qs = Question.objects.all()
-    qs = qs.order_by('-added_at')
+    qs = Question.objects.all().order_by('-added_at')
     page, paginator = paginate(request, qs)
     paginator.baseurl = reverse('new') + '?page='
 
@@ -44,8 +45,7 @@ def new(request):
         })
 
 def popular(request):
-    qs = Question.objects.all()
-    qs = qs.order_by('-rating')
+    qs = Question.objects.all().order_by('-rating')
     page, paginator = paginate(request, qs)
     paginator.baseurl = reverse('popular') + '?page='
 
@@ -56,10 +56,22 @@ def popular(request):
         })
 
 def question(request, num):
-    # qs = Question.objects.get(id=num)
     qs = get_object_or_404(Question, id=num)
     answers = Answer.objects.filter(question_id=num).order_by('-added_at').all()
     return render(request, 'question_page.html', {
         'question': qs,
         'answers': answers,
         })
+
+def add_question(request):
+    if request.method == "POST":
+        form = Add_Form(request.POST)
+        if form.is_valid():
+            question = form.save(commit=False)
+            question.author_id = '1'
+            question.added_at = timezone.now()
+            question.save()
+            return redirect('question_page', num=question.pk)
+    else:
+        form = Add_Form()
+    return render(request, 'add_question.html', {'form': form})

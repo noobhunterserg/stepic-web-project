@@ -12,7 +12,7 @@
    </tr>
     {% for question in questions %}
         <tr>
-          <td>{{ question.title }}</td>
+          <td><a href="{{ question.get_url }}">{{ question.title }}</a></td>
           <td>{{ question.author.username }}</td>
           <td>{{ question.added_at }}</td>
           <td>{{ question.rating }}</td>

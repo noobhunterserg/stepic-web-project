@@ -12,4 +12,6 @@
   {% for answer in answers %}
     <p>{{ answer.text }}{{ answer.author.username }}</p>
   {% endfor %}
+
+  {% include "answer.html" %}
 {% endblock %}
