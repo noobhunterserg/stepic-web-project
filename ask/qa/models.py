@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 
 class QuestionManager(models.Manager):
     def new():
@@ -24,6 +25,9 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title
+
+    def time_since_created(self):
+        return (timezone.now()-self.added_at).seconds//60
 
 class Answer(models.Model):
     text = models.TextField()

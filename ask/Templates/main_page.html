@@ -1,24 +1,48 @@
 {% extends 'index.html' %}
 
+{% block showcase %}
+  <section id="showcase">
+    <div class="container">
+      <h1>
+        Ask whatever you want<br>&amp;<br>Discover new things with us
+      </h1>
+    </div>
+  </section>
+{% endblock %}
 
-{% block context %}
-  <table>
-    TABLE
-    <tr>
-      <th>Question</th>
-      <th>Author</th>
-      <th>Added at</th>
-      <th>Rating</th>
-   </tr>
-    {% for question in questions %}
-        <tr>
-          <td><a href="{{ question.get_url }}">{{ question.title }}</a></td>
-          <td>{{ question.author.username }}</td>
-          <td>{{ question.added_at }}</td>
-          <td>{{ question.rating }}</td>
-        </tr>
-    {% endfor %}
-  </table>
-    {% include "pagination.html" %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9" id="mainbar">
+        <h2>Questions</h2>
+        {% for question in questions %}
+          <div class="question-list">
+            <div class="votes">
+              <h3><a href="/question/{{ question.id }}/addlike/">{{ question.rating }}</a></h3>
+              <p>votes</p>
+            </div>
+            <div class="summary">
+              <div class="title"><h3><a href="{{ question.get_url }}">{{ question.title }}</a><h3>
+              </div>
+              <div class="tags">
+                <i><a href="#">#hiworld</a> <a href="#">#welcome</a></i>
+              </div>
+              <div class="additions">
+                <span>asked {{ question.added_at }} by </span><a href="#">{{ question.author.username }}</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        {% include "pagination.html" %}
+
+      </div>
+      <div class="col-lg-3" id="sidebar">
+
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}

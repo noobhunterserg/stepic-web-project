@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<div class="container">
+  <div class="navbar-header" id="branding">
+    <a class="navbar-brand" href="#">
+      <img alt="Brand" src="{% static 'images/log.jpg' %}">
+    </a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/popular/">Popular</a></li>
+      <li><a href="/ask/">Ask</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/login/">Log in</a></li>
+      <li><a href="/logout/">Sign up</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div>

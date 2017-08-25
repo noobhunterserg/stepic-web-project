@@ -1,17 +1,35 @@
 {% extends 'index.html' %}
+{% load staticfiles %}
 
+{% block content %}
+  <section id="question">
+    <div class="container">
+      <div class="date">
+        <p>{{ question.time_since_created }}</p>
+      </div>
+      <div class="title">
+        <h2>{{ question.title }}</h2>
+      </div>
+      <div class="text">
+        <p>{{ question.text}}</p>
+      </div>
+      <div class="user">
+        <img src="{% static 'images/user.png' %}">
+        <a href="#">{{ question.author.username }}</a>
+      </div>
+    </div>
+  </section>
 
-{% block context %}
-  <p>{{ question.title }}</p>
-  <br>
-  <p>{{ question.text }}</p>
-  <br>
-  <br>
-  <br>
-  <br>
-  {% for answer in answers %}
-    <p>{{ answer.text }}{{ answer.author.username }}</p>
-  {% endfor %}
+  <section id="answers">
+    <div class="container">
+      {% for answer in answers %}
+        <div class="answer">
+          <div class="user">{{ answer.author.username }}</div>
+          <div class="text">{{ answer.text }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
 
   {% include "answer.html" %}
 {% endblock %}

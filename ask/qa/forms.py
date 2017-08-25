@@ -1,9 +1,12 @@
 from django import forms
-from .models import Question
+from .models import Question, Answer
 
-class Add_Form(forms.ModelForm):
+class Add_Question(forms.ModelForm):
     class Meta:
         model = Question
         fields = ('title', 'text',)
-    # title = forms.CharField(100)
-    # text  = forms.CharField(widget=forms.Textarea)
+
+class Add_Answer(forms.ModelForm):
+    class Meta:
+        model = Answer
+        fields = ('text',)

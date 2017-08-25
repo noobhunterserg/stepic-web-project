@@ -4,33 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>site</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <meta name='viewport' content="width=device-width, initial-scale=1.0">
+    <title>SITE</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
   </head>
   <body>
-    <div class="header1">
-      <div class="sitename1">
-        <img src="{% static 'images/image1.png' %}">
-      </div>
-      <div class="user1"></div>
-    </div>
-    <div class="main1">
-      <div class="navi1">
-        <h2>Navigation</h2>
-        <p><a href="/">Home</a></p>
-        <p><a href="/popular/">Popular Questions</a></p>
-        <p><a href="/ask/">Ask Question</a></p>
-        <p><a href="/login/">Log In</a></p>
-        <p><a href="/signup/">Sign Up</a></p>
-        <p><a href="/logout/">Log Out</a></p>
-      </div>
-      <div class="content1">
-        {% block context %}questions{% endblock %}
-      </div>
-      <div class="tag1">
-        {% block tags %}tags{% endblock %}
-      </div>
-    </div>
+    <header>
+      {% include "header.html" %}
+    </header>
+
+      {% block showcase %}{% endblock %}
+
+      {% block content %}{% endblock %}
+
+    <footer>
+      {% include "footer.html" %}
+    </footer>
   </body>
 </html>

@@ -1,5 +1,5 @@
 {% if paginator.num_pages > 1 %}
-  <nav>
+  <nav class="pagi">
     <ul class="pagination">
     {% for p in paginator.page_range %}
       {% if p == page.number %}
